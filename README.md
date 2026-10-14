@@ -7,17 +7,17 @@ avec 6 tables : ALBUM, ARTISTE, CONTENU, GROUPE, MEMBRE_GROUPE, MORCEAU
 
 ## Notions étudiées  
 
-  - SELECT
-  - FROM
-  - WHERE
-  - AS
-  - LIKE
-  - INSERT
-  - UPDATE
-  - DELETE
-  - Jointures
-  - Clés primaires
-  - Clés étrangères
+  - - SELECT
+  - - FROM
+  - - WHERE
+  - - AS
+  - - LIKE
+  - - INSERT
+  - - UPDATE
+  - - DELETE
+  - - Jointures
+  - - Clés primaires
+  - - Clés étrangères
 
 ## Projet 1 - Pour chaque album, donnez son titre, son genre et son prix.
 
