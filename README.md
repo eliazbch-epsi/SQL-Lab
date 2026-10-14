@@ -7,7 +7,7 @@ avec 6 tables : ALBUM, ARTISTE, CONTENU, GROUPE, MEMBRE_GROUPE, MORCEAU
 
 ## Notions étudiées  
 
-  - SLECTIONNER ("SELECT")
+  - SLECTIONNER
   - FROM
   - WHERE
   - AS
