@@ -95,59 +95,53 @@ Capture :
 
 Requête : 
 
-        SELECT ARTISTE.NOM, GROUPE.NOM
-        FROM ARTISTE
+        SELECT * FROM ALBUM
         INNER JOIN GROUPE 
-        ON ARTISTE.IND_GROUPE = GROUPE.IDENT ; 
+        ON ALBUM.IDENT_GROUPE = GROUPE.IDENT ; 
 
 Capture :
 
-<img width="872" height="587" alt="image" src="https://github.com/user-attachments/assets/c4419eef-2d07-4078-9741-3505a1da31cd" />
+<img width="1627" height="610" alt="image" src="https://github.com/user-attachments/assets/1dd88814-f997-4013-b741-fd6d6a57e10e" />
 
 3. Affichez le nom des groupes et chaque artiste le composant en utilisant des jointures internes.
 
 Requête :
 
-        SELECT GROUPE.NOM, ARTISTE.NOM
-        FROM ARTISTE
-        INNER JOIN GROUPE
-        ON ARTISTE.IND_GROUPE = GROUPE.IDENT ;
+        SELECT GROUPE.NOM, ARTISTE.PRENOM 
+        FROM GROUPE
+        INNER JOIN MEMBRE_GROUPE ON MEMBRE_GROUPE.IDENT_GROUPE = GROUPE.IDENT
+        INNER JOIN ARTISTE ON ARTISTE.IDENT = MEMBRE_GROUPE.IDENT_ARTISTE
 
 Capture :
 
-<img width="807" height="621" alt="image" src="https://github.com/user-attachments/assets/d8eaa06a-2c1e-4697-95aa-a5f904c89319" />
+<img width="992" height="622" alt="image" src="https://github.com/user-attachments/assets/17679b9b-e9b3-4eca-b52f-be1778ca020f" />
 
 5. Affichez le genre des albums ainsi que chaque morceau inscrit dans le genre, en utilisant des jointures internes.
 
 Requête :
 
-        SELECT ALBUM.GENRE, MORCEAU.TITRE
-        FROM ALBUM 
-        INNER JOIN CONTENU
-        ON ALBUM.IDENT = CONTENU.IDENT_ALBUM
-        INNER_JOIN MORCEAU
-        ON CONTENU.IDENT_MORCEAU = Morceau.IDENT
+        SELECT ALBUM.GENRE, MORCEAU.TITRE 
+        FROM ALBUM
+        INNER JOIN CONTENU ON CONTENU.IDENT_ALBUM = ALBUM.IDENT
+        INNER JOIN MORCEAU ON  MORCEAU.IDENT = CONTENU.IDENT_MORCEAU 
 
 Capture :
 
-<img width="751" height="612" alt="image" src="https://github.com/user-attachments/assets/23b07379-afd3-491e-b499-6d4b771e7e49" />
+<img width="917" height="802" alt="image" src="https://github.com/user-attachments/assets/16daaf76-e1e8-4ea7-94ad-34b292126a1f" />
 
 Projet 6 - Reprenez la dernière requête pour n’y afficher que les musiques provenant d’artiste.
 
 Requête :
 
-        SELECT ALBUM.GENRE, MORCEAU.TITRE
-        FROM ALBUM 
-        INNER JOIN CONTENU
-        ON ALBUM.IDENT = CONTENU.IDENT_ALBUM
-        INNER_JOIN MORCEAU
-        ON CONTENU.IDENT_MORCEAU = MORCEAU.IDENT
-        WHERE ALBUM.IDENT_ARTISTE IS NOT NULL;
+        SELECT ALBUM.GENRE, MORCEAU.TITRE 
+        FROM ALBUM
+        INNER JOIN CONTENU ON CONTENU.IDENT_ALBUM = ALBUM.IDENT
+        INNER JOIN MORCEAU ON  MORCEAU.IDENT = CONTENU.IDENT_MORCEAU 
+        INNER JOIN ARTISTE ON ALBUM.IDENT_ARTISTE = ARTISTE.IDENT
         
 Capture :
 
-<img width="812" height="780" alt="image" src="https://github.com/user-attachments/assets/c108ef32-242e-42f4-8c5c-5600e20bb78c" />
-
+<img width="895" height="592" alt="image" src="https://github.com/user-attachments/assets/ceb07b19-2ed0-4ba5-9aa8-a5ecb292e7ec" />
 
 ## à retenir :
 
