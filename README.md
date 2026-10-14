@@ -28,7 +28,8 @@ capture : <img width="762" height="512" alt="image" src="https://github.com/user
 
 ## Projet 2 - Pour chaque morceau, indiquez son titre dans une colonne se nommant «.Le titre des morceaux ».
 
-Requête 2 : SELECT TITRE as "Le titre des morceaux" 
+Requête 2 : SELECT TITRE 
+            as "Le titre des morceaux" 
             FROM MORCEAU ;
 
 Capture : <img width="835" height="427" alt="image" src="https://github.com/user-attachments/assets/b616fb30-50af-460d-bf88-5b2ec0513352" />
